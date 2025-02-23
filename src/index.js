@@ -13,7 +13,7 @@ const server = createServer(app); // Create an HTTP server
 
 const io = new Server(server, {
   cors: {
-    origin: "*", // Allow all origins (Change this for production)
+    origin: "*",
     methods: ["GET", "POST"],
   },
 });
