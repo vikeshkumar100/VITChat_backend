@@ -4,6 +4,7 @@ import cors from "cors";
 import { createServer } from "http";
 import { Server } from "socket.io";
 import authRouter from "./routes/authRouter.js";
+import userCount from "./routes/userCount.js";
 import "./db/dbConnection.js";
 import { initializeSocket } from "./socket/socket.js"; // Import WebSocket logic
 
@@ -28,6 +29,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/auth", authRouter);
+app.use("/users", userCount);
 
 // Initialize WebSocket
 initializeSocket(io);
